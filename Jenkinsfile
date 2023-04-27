@@ -1,4 +1,4 @@
-  
+def gv
 pipeline{
     agent any
     parameters{
@@ -13,9 +13,18 @@ pipeline{
         SERVER_CREDENTIALS=credentials('dockerhub-jenkins')
     }
     stages{
+        stage('init'){
+            steps{
+                script{
+                    gv=load "script.groovy "
+                }
+            }
+        }
         stage('build'){
             steps{
-                echo 'building the application...'
+                 script{
+                     gv.buildApp
+                 }
                 echo "building the version ...... ${SERVER_CREDENTIALS}"
             } 
         }
