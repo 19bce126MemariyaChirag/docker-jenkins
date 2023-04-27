@@ -28,10 +28,4 @@ pipeline{
             }
         }
     }
-    post{
-        always{
-        }
-        success{
-        }
-    }
 }
