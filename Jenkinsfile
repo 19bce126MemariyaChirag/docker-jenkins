@@ -21,9 +21,9 @@ pipeline{
         stage('deploy'){
             steps{
                 echo 'deploying the applicatin for the demo '
-                withCredentials([usernamePassword(credentials:'dockerhub-jenkins',usernameVariable:USER,passwordVariable:PWD) ]){  
-                    sh "some script   ${USER} ${PWD}"
-                }
+                // withCredentials([usernamePassword(credentials:'dockerhub-jenkins',usernameVariable:USER,passwordVariable:PWD) ]){  
+                //     sh "some script   ${USER} ${PWD}"
+                // }
                   
             }
         }
